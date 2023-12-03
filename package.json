@@ -1,23 +1,26 @@
 {
-  "name": "sit725-2023-t3-prac4",
-  "version": "1.0.0",
-  "description": "",
-  "main": "startServer.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Krish7141/sit725-2023-t3-prac4.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Krish7141/sit725-2023-t3-prac4/issues"
-  },
-  "homepage": "https://github.com/Krish7141/sit725-2023-t3-prac4#readme",
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongodb": "^6.3.0"
-  }
+    "name": "sit725-2023-t2-p2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node startServerWithMongo.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stephenliu8964/sit725-2023-t2-prac2.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/stephenliu8964/sit725-2023-t2-prac2/issues"
+    },
+    "homepage": "https://github.com/stephenliu8964/sit725-2023-t2-prac2#readme",
+    "dependencies": {
+        "express": "^4.18.2",
+        "expresss": "^0.0.0",
+        "mongodb": "^4.17.1",
+        "nodemon": "^3.0.1"
+    }
 }

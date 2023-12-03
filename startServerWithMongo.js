@@ -7,7 +7,7 @@ let collection;
 
 app.use(express.static(__dirname + '/public'))
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 
 const client = new MongoClient(uri, {
     serverApi: {
@@ -23,41 +23,41 @@ async function runDBConnection() {
         await client.connect();
         collection = client.db().collection('Cat');
         console.log(collection);
-    } catch (ex) {
+    } catch(ex) {
         console.error(ex);
     }
 }
 
-app.get('/', function (req, res) {
+app.get('/', function (req,res) {
     res.render('indexMongo.html');
 });
 
-app.get('/api/cats', (req, res) => {
-    getAllCats((err, result) => {
+app.get('/api/cats', (req,res) => {
+    getAllCats((err,result)=>{
         if (!err) {
-            res.json({ statusCode: 200, data: result, message: 'get all cats successful' });
+            res.json({statusCode:200, data:result, message:'get all cats successful'});
         }
     });
 });
 
-app.post('/api/cat', (req, res) => {
+app.post('/api/cat', (req,res)=>{
     let cat = req.body;
     postCat(cat, (err, result) => {
         if (!err) {
-            res.json({ statusCode: 201, data: result, message: 'success' });
+          res.json({statusCode:201, data:result, message:'success'});
         }
     });
 });
 
-function postCat(cat, callback) {
-    collection.insertOne(cat, callback);
+function postCat(cat,callback) {
+    collection.insertOne(cat,callback);
 }
 
-function getAllCats(callback) {
+function getAllCats(callback){
     collection.find({}).toArray(callback);
 }
 
-app.listen(port, () => {
+app.listen(port, ()=>{
     console.log('express server started');
     runDBConnection();
 });
